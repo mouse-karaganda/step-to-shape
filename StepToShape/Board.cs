@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace StepToShape
 {
-    public partial class Form1 : Form
+    public partial class frmBoard : Form
     {
-        public Form1()
+        public frmBoard()
         {
             InitializeComponent();
         }
