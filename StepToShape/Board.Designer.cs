@@ -29,6 +29,7 @@ namespace StepToShape
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.grbTimerLog = new System.Windows.Forms.GroupBox();
             this.lbValuePoint = new System.Windows.Forms.Label();
             this.lbNamePoint = new System.Windows.Forms.Label();
@@ -43,6 +44,7 @@ namespace StepToShape
             this.btnStartCursor = new System.Windows.Forms.Button();
             this.lbValueBoardOpened = new System.Windows.Forms.Label();
             this.lbValueMousePosition = new System.Windows.Forms.Label();
+            this.Stepper = new System.Windows.Forms.Timer(this.components);
             this.grbTimerLog.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,6 +145,7 @@ namespace StepToShape
             this.btnStopCursor.TabIndex = 17;
             this.btnStopCursor.Text = "Stop shape";
             this.btnStopCursor.UseVisualStyleBackColor = true;
+            this.btnStopCursor.Click += new System.EventHandler(this.btnStopCursor_Click);
             // 
             // btnClipBox
             // 
@@ -153,6 +156,7 @@ namespace StepToShape
             this.btnClipBox.TabIndex = 18;
             this.btnClipBox.Text = "Show clip box";
             this.btnClipBox.UseVisualStyleBackColor = true;
+            this.btnClipBox.Click += new System.EventHandler(this.btnClipBox_Click);
             // 
             // btnStartCursor
             // 
@@ -163,6 +167,7 @@ namespace StepToShape
             this.btnStartCursor.TabIndex = 16;
             this.btnStartCursor.Text = "Start shape";
             this.btnStartCursor.UseVisualStyleBackColor = true;
+            this.btnStartCursor.Click += new System.EventHandler(this.btnStartCursor_Click);
             // 
             // lbValueBoardOpened
             // 
@@ -182,6 +187,11 @@ namespace StepToShape
             this.lbValueMousePosition.TabIndex = 23;
             this.lbValueMousePosition.Text = "=";
             // 
+            // Stepper
+            // 
+            this.Stepper.Interval = 500;
+            this.Stepper.Tick += new System.EventHandler(this.Stepper_Tick);
+            // 
             // frmBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -198,6 +208,7 @@ namespace StepToShape
             this.Name = "frmBoard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Board";
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmBoard_MouseMove);
             this.grbTimerLog.ResumeLayout(false);
             this.grbTimerLog.PerformLayout();
             this.ResumeLayout(false);
@@ -221,6 +232,7 @@ namespace StepToShape
         private System.Windows.Forms.Button btnStartCursor;
         private System.Windows.Forms.Label lbValueBoardOpened;
         private System.Windows.Forms.Label lbValueMousePosition;
+        private System.Windows.Forms.Timer Stepper;
     }
 }
 
