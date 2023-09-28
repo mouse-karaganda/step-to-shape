@@ -11,8 +11,7 @@ namespace StepToShape.Tools
     public static class MathTools
     {
         /// <summary>
-        /// Проверяет приближение к нулю,
-        /// учитывая машинный эпсилон
+        /// Проверяет приближение к нулю, учитывая машинный эпсилон
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
@@ -30,7 +29,7 @@ namespace StepToShape.Tools
 
         public static bool LessOrEquals(this double self, double other)
         {
-            var result = (self < other) ? true : self.EqualsWith(other);
+            var result = self.EqualsWith(other) ? true : (self < other);
             return result;
         }
 
