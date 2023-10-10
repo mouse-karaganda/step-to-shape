@@ -51,6 +51,7 @@ namespace StepToShape
             }
             var current = this.DrawToList[this.StepIndex++].Position;
             Cursor.Position = current;
+
             lbValueTick.Text = string.Format("= {0:HH:mm:ss}", DateTime.Now);
             lbValueStep.Text = string.Format("= {0} / {1}", this.StepIndex, this.DrawToList.Count);
             lbValuePoint.Text = string.Format("= x {0}, y {1}", current.X, current.Y);
