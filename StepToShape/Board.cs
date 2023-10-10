@@ -66,7 +66,7 @@ namespace StepToShape
             var cType = this.GetType();
             //MessageBox.Show(string.Format("Name: '{0}', FullName: '{1}', Assembly: {2}", cType.Name, cType.FullName, cType.AssemblyQualifiedName));
 
-            DrawEllipse();
+            DrawGraphics();
 
             var clip = Cursor.Clip;
             var msgText = string.Format("Width: {0}, Height: {1}\nLeft: {2}, Top: {3}\nX: {4}, Y: {5}", clip.Width, clip.Height, clip.Left, clip.Top, clip.X, clip.Y);
@@ -79,7 +79,7 @@ namespace StepToShape
             lbValueMousePosition.Text = string.Format("= x {0}, y {1}", Cursor.Position.X, Cursor.Position.Y);
         }
 
-        protected void DrawEllipse()
+        protected void DrawGraphics()
         {
             Pen myPen = new Pen(Color.Red);
             Graphics formGraphics;
